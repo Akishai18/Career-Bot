@@ -168,7 +168,7 @@ def speech_to_text():
 
                 print("Answer Received, Processing: ")
                 #Send the message to the Google Gemini program through an API request 
-                convo.send_message("Provide Feedback to the Question you gave me based on my answer: Please DO NOT WRITE ASTERICKS {}".format(MyText))
+                convo.send_message("Provide Feedback to the Question you gave me based on my answer and let me know who my interview skills were (Ex. Eye Contact, Volume, Pitch, Melody, Artifculation, etc) {}".format(MyText))
 
                 #The bot speaks the response and it is printed as well
                 SpeakText(convo.last.text)
