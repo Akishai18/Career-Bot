@@ -63,11 +63,6 @@ def calculate_angle(left_eye_center, right_eye_center):
     #Find the change of the x and y coordinates for the eye centres
     delta_y = right_eye_center[1] - left_eye_center[1]
     delta_x = right_eye_center[0] - left_eye_center[0]
-
-    #Find the avereage of the change in x and y to act as a parameter and baseline check to see if overall check is too large or not
-    delta_average = (delta_y + delta_x) * 0.5
-    if delta_average > 1:
-        return math.tan(delta_avereage)
     #Calculates the angle of eyes by finding the arctangent of the new points
     angle = math.atan2(delta_y, delta_x) * 180 / math.pi
     return angle
