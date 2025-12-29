@@ -8,7 +8,12 @@ import pyttsx3
 import threading
 import time
 
-genai.configure(api_key="AIzaSyBWaI02BmbxTzpD2RqQeMIMiAP4XVG90P4")
+# Load API key from environment variable
+api_key = os.getenv('GEMINI_API_KEY')
+if not api_key:
+    raise ValueError("Please set the GEMINI_API_KEY environment variable")
+
+genai.configure(api_key=api_key)
 
 # Set up the model
 generation_config = {
@@ -226,3 +231,4 @@ while True:
         break
     else:
         print("Please Try Again")
+
